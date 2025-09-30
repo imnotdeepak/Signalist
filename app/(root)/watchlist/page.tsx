@@ -7,6 +7,9 @@ import Link from "next/link";
 import SearchCommand from "@/components/SearchCommand";
 import { searchStocks } from "@/lib/actions/finnhub.actions";
 
+// Mark this page as dynamic since it requires authentication
+export const dynamic = "force-dynamic";
+
 export default async function WatchlistPage() {
   const session = await auth.api.getSession({ headers: await headers() });
 
